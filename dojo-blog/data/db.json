@@ -1,0 +1,14 @@
+{
+  "blogs": [
+    { "title": "xxxx",
+      "body": "lorem bla bla",
+      "author": "Mamma",
+      "id": 1
+    },
+    { "title": "xxxx33333",
+      "body": "lorem bla bla",
+      "author": "Pappa",
+      "id": 2
+    }
+  ]
+}
