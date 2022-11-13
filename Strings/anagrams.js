@@ -1,4 +1,5 @@
 /*
+Pattern 1: Using a Length-256 Integer Array
 What characters are we using? ASCII (256), a-z (97-122), etc.
 Capital letters or lower letter incl.?
 */

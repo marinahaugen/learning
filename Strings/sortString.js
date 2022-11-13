@@ -1,9 +1,10 @@
 /*
+Pattern 1: Using a Length-256 Integer Array
 Input: lowercase character from 'a-z' = 0-25
 Time complexity: O(n log n)
 */
 function sortString1(str) {
-  sortedString = str.split('').sort().join('');
+  sortedString1 = str.split('').sort().join('');
   console.log(`Solution 1: ${sortedString}`);
 }
 

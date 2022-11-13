@@ -1,4 +1,5 @@
 /*
+Pattern 1: Using a Length-256 Integer Array
 SLIDING WINDOW APPROACH
 
 Time complexity: O(n^2)
