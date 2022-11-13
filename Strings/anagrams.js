@@ -1,6 +1,7 @@
-//What characters are we using? ASCII (256), a-z (97-122), etc.
-//Capital letters or lower letter incl.?
-
+/*
+What characters are we using? ASCII (256), a-z (97-122), etc.
+Capital letters or lower letter incl.?
+*/
 function isAnagram(str1, str2) {
   const str1Low = str1.toLowerCase();
   const str2Low = str2.toLowerCase();

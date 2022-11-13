@@ -1,11 +1,13 @@
-//Input: lowercase character from 'a-z' = 0-25
-//Time Complexity: O(n log n)
+/*
+Input: lowercase character from 'a-z' = 0-25
+Time complexity: O(n log n)
+*/
 function sortString1(str) {
   sortedString = str.split('').sort().join('');
   console.log(`Solution 1: ${sortedString}`);
 }
 
-// Time Complexity: O(MAX_CHAR * n) which becomes O(n) as MAX_CHAR is  constant
+//Time complexity: O(MAX_CHAR * n) which becomes O(n) as MAX_CHAR is  constant
 function sortString2(str) {
   const MAX_CHAR = 26;
   charArray = new Array(MAX_CHAR).fill(0);
