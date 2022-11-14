@@ -59,25 +59,26 @@ var lengthOfLongestSubstring2 = function(s) {
 lengthOfLongestSubstring2('abcabcbb');
 
 /*
-Time complexity: O(n). Index j will iterate n times
-Space complexity: O(min(m,n))
+Time complexity: O(n) n is the size of the input string. Index j will iterate n times
+Space complexity: O(m) m size of table
 Assumption of char set: ASCII (not extended), 128
+OPTIMIZED SOLUTON with direct access table. Use index to record the occurrence of char
 */
 let lengthOfLongestSubstring3 = function(s) {
-  let chars = new Array(128).fill(0);
-  let left = 0;
-  let right = 0;
+  let chars = new Array(128).fill(0); //record how many times a char occurs
+  let left = 0; //contract window
+  let right = 0; //extend window
   let max = 0;
-  /*
-  let rightChar = s.charCodeAt(right);
-  console.log(`print chars: ${chars}`)
-  console.log(`print right char code: ${rightChar}`)
-  console.log(`print char index: ${chars[rightChar]}`)
-  */
 
-  //Go through the whole string
   while(right < s.length) {
     let rightChar = s.charCodeAt(right);
+
+    /*
+    Find char index from table.
+    If char index is not null we know that it has appeated previously
+    && index lies in the current window (>= left, < right)
+    We can contract the window by moving left boundary to (charIndex + 1)
+    */
     let charIndex = chars[rightChar];
     if(charIndex != null && charIndex >= left && charIndex < right) {
       left = charIndex + 1;
@@ -85,6 +86,7 @@ let lengthOfLongestSubstring3 = function(s) {
 
     max = Math.max(max, right - left + 1);
 
+    //before extending the window we can update the index of the current character
     chars[rightChar] = right;
     right++;
   }
@@ -94,3 +96,31 @@ let lengthOfLongestSubstring3 = function(s) {
 lengthOfLongestSubstring3('abcabcbb') //Output: 3
 lengthOfLongestSubstring3('bbbbb') //Output: 1
 lengthOfLongestSubstring3('pwwkew') //Output: 3
+
+//Solution using count of char occurrence
+let lengthOfLongestSubstring4 = function(s) {
+  let chars = new Array(128).fill(0); //record how many times a char occurs
+  let left = 0; //contract window
+  let right = 0; //extend window
+  let max = 0;
+
+  while(right < s.length) {
+    let rightChar = s.charCodeAt(right);
+    chars[rightChar]++;
+
+    while(chars[rightChar] > 1) {
+      let leftChar = s.charCodeAt(left);
+      chars[leftChar]--; //reduce occurrence
+      left++; //contract window
+    }
+
+    max = Math.max(max, right - left + 1);
+    right++; //extend window
+  }
+console.log(`S4: Longest sunstring: ${max}`);
+return max;
+}
+
+lengthOfLongestSubstring4('abcabcbb') //Output: 3
+lengthOfLongestSubstring4('bbbbb') //Output: 1
+lengthOfLongestSubstring4('pwwkew') //Output: 3
