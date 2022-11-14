@@ -1,6 +1,6 @@
 /*
 W: non-alphanumeric
-w: alphanumeric
+w: alphanumeric incl. _
 */
 var isPalindrome = function(s) {
   let lowerCaseS = s.toLowerCase();
@@ -18,3 +18,4 @@ var isPalindrome = function(s) {
 console.log(isPalindrome("A man, a plan, a canal: Panama")) //true
 console.log(isPalindrome("race a car")) //false
 console.log(isPalindrome("")) //true
+console.log(isPalindrome("ab_a")) //false
