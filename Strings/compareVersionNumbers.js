@@ -1,6 +1,6 @@
 /*
-What happens if they have different length
---> add 0
+Time complexity : O(N+M+max⁡(N,M)), where N and M are lengths of input strings.
+Space complexity : O(N+M) to store arrays nums1 and nums2.
 */
 
 var compareVersion = function(v1, v2) {
