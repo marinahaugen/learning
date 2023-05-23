@@ -26,8 +26,8 @@ function isAnagram(strs) {
     //return the values as an array
     return Object.values(groups);
 }
-
-console.log(isAnagram(['DNA', 'DNB', 'three', 'four', 'here', 'there', 'Elvis', 'lives', 'ether']));
+console.log('Alt 1:');
+//console.log(isAnagram(['DNA', 'DNB', 'three', 'four', 'here', 'there', 'Elvis', 'lives', 'ether']));
 
 /*
 time O(n*k log k)
@@ -64,6 +64,7 @@ function isAnagram2(strs) {
     return Object.values(groups);
 }
 
+console.log('Alt 2:');
 console.log(isAnagram2(['DNA', 'DNB', 'three', 'four', 'here', 'there', 'Elvis', 'lives', 'ether']));
 
 /*
